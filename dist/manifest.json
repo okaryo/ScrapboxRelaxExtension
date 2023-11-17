@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "ChillinScrapbox",
+  "short_name": "hoge",
+  "description": "hoge",
+  "version": "1.0.0",
+  "action": {
+    "default_title": "TabTabTab",
+    "default_icon": {
+      "16": "chillin_scrapbox16.png",
+      "32": "chillin_scrapbox32.png",
+      "48": "chillin_scrapbox48.png",
+      "128": "chillin_scrapbox128.png"
+    }
+  },
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://scrapbox.io/*"],
+      "js": ["js/content_scripts.js"]
+    }
+  ],
+  "icons": {
+    "16": "chillin_scrapbox16.png",
+    "32": "chillin_scrapbox32.png",
+    "48": "chillin_scrapbox48.png",
+    "128": "chillin_scrapbox128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["js/assets/*"],
+      "matches": ["*://*/*"]
+    },
+    {
+      "resources": ["assets/*"],
+      "matches": ["*://*/*"]
+    }
+  ]
+}
