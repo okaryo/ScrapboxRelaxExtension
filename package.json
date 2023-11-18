@@ -6,7 +6,7 @@
     "dev": "vite build --watch --mode development",
     "build": "vite build",
     "test": "vitest run",
-    "check": "@biomejs/biome check --apply ./src/*"
+    "check": "biome check --apply-unsafe ./src"
   },
   "author": "okaryo",
   "license": "MIT",
