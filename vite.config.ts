@@ -15,7 +15,7 @@ export default defineConfig(({ mode }) => {
       reportCompressedSize: isProduction,
       rollupOptions: {
         input: {
-          content_scripts: path.resolve(__dirname, "src/index.ts"),
+          content_scripts: path.resolve(__dirname, "src/index.tsx"),
         },
         output: {
           entryFileNames: "[name].js",
