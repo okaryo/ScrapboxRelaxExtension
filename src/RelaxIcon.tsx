@@ -12,7 +12,7 @@ const RelaxIcon = () => {
 		textarea.style.background = "";
 	};
 
-	const startRelax = (item: string) => {
+	const playAudio = (item: string) => {
 		if (relaxAudio) {
 			relaxAudio.pause();
 		}
@@ -22,7 +22,17 @@ const RelaxIcon = () => {
 		audio.play();
 		relaxAudio = audio;
 		setIsPlaying(true);
+	};
 
+	const stopAudio = () => {
+		if (relaxAudio) {
+			relaxAudio.pause();
+			relaxAudio = null;
+			setIsPlaying(false);
+		}
+	};
+
+	const setupBackgroundImage = (item: string) => {
 		if (backgroundImage === null) {
 			backgroundImage = document.createElement("div");
 		}
@@ -44,7 +54,9 @@ const RelaxIcon = () => {
 		}, 1000);
 		const body = document.querySelector("body");
 		body.insertBefore(backgroundImage, body.firstChild);
+	};
 
+	const setupTextAndCursorStyles = () => {
 		const mainPage: HTMLElement | null = document.querySelector("main.page");
 		if (mainPage) {
 			mainPage.style.backgroundColor = "transparent";
@@ -65,35 +77,39 @@ const RelaxIcon = () => {
 		textInput.addEventListener("focus", changeBackgroundColorOnTextAreaFocus);
 	};
 
-	const restoreToOriginal = () => {
-		if (relaxAudio) {
-			relaxAudio.pause();
-			relaxAudio = null;
-			setIsPlaying(false);
-
-			backgroundImage.remove();
-
-			const mainPage: HTMLElement | null = document.querySelector("main.page");
-			if (mainPage) {
-				mainPage.style.backgroundColor = "";
-			}
-			const texts = document.querySelectorAll(
-				"main.page .editor, main.page .line-title",
-			);
-			texts.forEach((text: HTMLElement) => {
-				text.style.color = "";
-			});
-			const cursor: HTMLElement | null =
-				document.querySelector("main.page .cursor");
-			if (cursor) {
-				cursor.style.backgroundColor = "";
-			}
-			const textInput = document.getElementById("text-input");
-			textInput.removeEventListener(
-				"focus",
-				changeBackgroundColorOnTextAreaFocus,
-			);
+	const restoreTextAndCursorStyles = () => {
+		const mainPage: HTMLElement | null = document.querySelector("main.page");
+		if (mainPage) {
+			mainPage.style.backgroundColor = "";
 		}
+		const texts = document.querySelectorAll(
+			"main.page .editor, main.page .line-title",
+		);
+		texts.forEach((text: HTMLElement) => {
+			text.style.color = "";
+		});
+		const cursor: HTMLElement | null =
+			document.querySelector("main.page .cursor");
+		if (cursor) {
+			cursor.style.backgroundColor = "";
+		}
+		const textInput = document.getElementById("text-input");
+		textInput.removeEventListener(
+			"focus",
+			changeBackgroundColorOnTextAreaFocus,
+		);
+	};
+
+	const startRelax = (item: string) => {
+		playAudio(item);
+		setupBackgroundImage(item);
+		setupTextAndCursorStyles();
+	};
+
+	const restoreToOriginal = () => {
+		stopAudio();
+		backgroundImage.remove();
+		restoreTextAndCursorStyles();
 	};
 
 	useEffect(() => {
