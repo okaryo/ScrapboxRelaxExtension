@@ -108,7 +108,9 @@ const RelaxIcon = () => {
 
 	const restoreToOriginal = () => {
 		stopAudio();
-		backgroundImage.remove();
+		if (backgroundImage) {
+			backgroundImage.remove();
+		}
 		restoreTextAndCursorStyles();
 	};
 
