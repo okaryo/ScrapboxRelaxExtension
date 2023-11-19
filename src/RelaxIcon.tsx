@@ -64,6 +64,7 @@ const RelaxIcon = () => {
 		const texts = document.querySelectorAll(
 			"main.page .editor, main.page .line-title, main.page .cursor-line",
 		);
+		// biome-ignore lint/complexity/noForEach: texts is a NodeList, not an array.
 		texts.forEach((text: HTMLElement) => {
 			text.style.color = "#FFFFFFCC";
 		});
@@ -85,6 +86,7 @@ const RelaxIcon = () => {
 		const texts = document.querySelectorAll(
 			"main.page .editor, main.page .line-title",
 		);
+		// biome-ignore lint/complexity/noForEach: texts is a NodeList, not an array.
 		texts.forEach((text: HTMLElement) => {
 			text.style.color = "";
 		});
@@ -165,6 +167,7 @@ const RelaxIcon = () => {
 			>
 				{relaxItems.map((item) => (
 					<li key={item}>
+						{/* biome-ignore lint/a11y/useValidAnchor: This a tag is required in scrapbox.io. */}
 						<a role="menuitem" onClick={() => startRelax(item)}>
 							{item}
 						</a>
@@ -172,8 +175,10 @@ const RelaxIcon = () => {
 				))}
 				{isPlaying && (
 					<>
+						{/* biome-ignore lint: This element is defined by scrapbox.io. */}
 						<li role="separator" className="divider" />
 						<li>
+							{/* biome-ignore lint/a11y/useValidAnchor: This a tag is required in scrapbox.io. */}
 							<a role="menuitem" onClick={restoreToOriginal}>
 								<i className="kamon kamon-pause" />
 								{t.stop}
