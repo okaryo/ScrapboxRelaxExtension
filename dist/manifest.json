@@ -14,7 +14,6 @@
       "128": "scrapbox_relax_extension128.png"
     }
   },
-  "permissions": ["storage"],
   "content_scripts": [
     {
       "matches": ["https://scrapbox.io/*"],
