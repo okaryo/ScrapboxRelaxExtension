@@ -1,1 +1,1 @@
-## ChillinScrapbox
+## ScrapboxRelaxExtension

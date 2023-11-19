@@ -8,10 +8,10 @@
   "action": {
     "default_title": "TabTabTab",
     "default_icon": {
-      "16": "chillin_scrapbox16.png",
-      "32": "chillin_scrapbox32.png",
-      "48": "chillin_scrapbox48.png",
-      "128": "chillin_scrapbox128.png"
+      "16": "scrapbox_relax_extension16.png",
+      "32": "scrapbox_relax_extension32.png",
+      "48": "scrapbox_relax_extension48.png",
+      "128": "scrapbox_relax_extension128.png"
     }
   },
   "permissions": ["storage"],
@@ -22,10 +22,10 @@
     }
   ],
   "icons": {
-    "16": "chillin_scrapbox16.png",
-    "32": "chillin_scrapbox32.png",
-    "48": "chillin_scrapbox48.png",
-    "128": "chillin_scrapbox128.png"
+    "16": "scrapbox_relax_extension16.png",
+    "32": "scrapbox_relax_extension32.png",
+    "48": "scrapbox_relax_extension48.png",
+    "128": "scrapbox_relax_extension128.png"
   },
   "web_accessible_resources": [
     {

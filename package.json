@@ -1,5 +1,5 @@
 {
-  "name": "chillin-scrapbox",
+  "name": "ScrapboxRelaxExtension",
   "description": "This chrome extension makes it easier to manage your open tabs.",
   "private": true,
   "scripts": {
