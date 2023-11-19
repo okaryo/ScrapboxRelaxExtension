@@ -1,0 +1,30 @@
+{
+  "app_name": {
+    "message": "ScrapboxRelaxExtension",
+    "description": "The name of the application. Shown in the web store."
+  },
+  "app_name_short": {
+    "message": "ScrapboxRelaxExtension",
+    "description": "The short name of the application. Shown at the top of the dropdown menu."
+  },
+  "app_desc": {
+    "message": "Scrapbox extension for more relaxing note taking.",
+    "description": "The short description of the application. Shown in the web store."
+  },
+  "bonfire": {
+    "message": "Bonfire",
+    "description": "one of a relax item"
+  },
+  "rain": {
+    "message": "Rain",
+    "description": "one of a relax item"
+  },
+  "forest": {
+    "message": "Forest",
+    "description": "one of a relax item"
+  },
+  "stop": {
+    "message": "Stop",
+    "description": "stop relax sound"
+  }
+}

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import t from "./Translations";
 
 let relaxAudio: HTMLAudioElement | null = null;
 let backgroundImage: HTMLElement | null = null;
@@ -11,8 +12,11 @@ const RelaxIcon = () => {
 		textarea.style.background = "";
 	};
 
-	const startRelax = () => {
-		const bgmUrl = chrome.runtime.getURL("assets/bonfire.mp3");
+	const startRelax = (item: string) => {
+		if (relaxAudio) {
+			relaxAudio.pause();
+		}
+		const bgmUrl = chrome.runtime.getURL(`assets/${item.toLowerCase()}.mp3`);
 		const audio = new Audio(bgmUrl);
 		audio.loop = true;
 		audio.play();
@@ -22,7 +26,7 @@ const RelaxIcon = () => {
 		if (backgroundImage === null) {
 			backgroundImage = document.createElement("div");
 		}
-		const url = chrome.runtime.getURL("assets/bonfire.jpg");
+		const url = chrome.runtime.getURL(`assets/${item.toLowerCase()}.jpg`);
 		backgroundImage.style.backgroundImage = `url(${url})`;
 		backgroundImage.style.backgroundSize = "cover";
 		backgroundImage.style.backgroundRepeat = "no-repeat";
@@ -111,6 +115,8 @@ const RelaxIcon = () => {
 		observer.observe(targetNode, config);
 	}, [restoreToOriginal]);
 
+	const relaxItems = [t.bonfire, t.rain, t.forest];
+
 	return (
 		<>
 			<button
@@ -139,18 +145,20 @@ const RelaxIcon = () => {
 				className="dropdown-menu dropdown-menu-right"
 				aria-labelledby="page-edit-menu"
 			>
-				<li>
-					<a role="menuitem" onClick={startRelax}>
-						Bonfire
-					</a>
-				</li>
+				{relaxItems.map((item) => (
+					<li key={item}>
+						<a role="menuitem" onClick={() => startRelax(item)}>
+							{item}
+						</a>
+					</li>
+				))}
 				{isPlaying && (
 					<>
 						<li role="separator" className="divider" />
 						<li>
 							<a role="menuitem" onClick={restoreToOriginal}>
 								<i className="kamon kamon-pause" />
-								Stop
+								{t.stop}
 							</a>
 						</li>
 					</>

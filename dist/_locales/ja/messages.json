@@ -1,0 +1,30 @@
+{
+  "app_name": {
+    "message": "ScrapboxRelaxExtension",
+    "description": "The name of the application. Shown in the web store."
+  },
+  "app_name_short": {
+    "message": "ScrapboxRelaxExtension",
+    "description": "The short name of the application. Shown at the top of the dropdown menu."
+  },
+  "app_desc": {
+    "message": "Scrapboxにおけるノート作成作業をより没入したものにする拡張です。",
+    "description": "The short description of the application. Shown in the web store."
+  },
+  "bonfire": {
+    "message": "焚き火",
+    "description": "one of a relax item"
+  },
+  "rain": {
+    "message": "雨",
+    "description": "one of a relax item"
+  },
+  "forest": {
+    "message": "森",
+    "description": "one of a relax item"
+  },
+  "stop": {
+    "message": "停止",
+    "description": "stop relax sound"
+  }
+}

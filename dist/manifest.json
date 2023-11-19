@@ -1,8 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "ChillinScrapbox",
-  "short_name": "hoge",
-  "description": "hoge",
+  "name": "__MSG_app_name__",
+  "short_name": "__MSG_app_name_short__",
+  "description": "__MSG_app_desc__",
+  "default_locale": "ja",
   "version": "1.0.0",
   "action": {
     "default_title": "TabTabTab",
