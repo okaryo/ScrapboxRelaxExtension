@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import t from "./Translations";
 
-let relaxAudio: HTMLAudioElement | null = null;
+let relaxAudio: AudioBufferSourceNode | null = null;
 let backgroundImage: HTMLElement | null = null;
 
 const RelaxIcon = () => {
@@ -12,21 +12,26 @@ const RelaxIcon = () => {
 		textarea.style.background = "";
 	};
 
-	const playAudio = (item: string) => {
+	const playAudio = async (item: string) => {
 		if (relaxAudio) {
-			relaxAudio.pause();
+			relaxAudio.stop();
 		}
 		const bgmUrl = chrome.runtime.getURL(`assets/${item.toLowerCase()}.mp3`);
-		const audio = new Audio(bgmUrl);
-		audio.loop = true;
-		audio.play();
-		relaxAudio = audio;
+		const audioContext = new AudioContext();
+		const response = await fetch(bgmUrl);
+		const arrayBuffer = await response.arrayBuffer();
+		const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+		relaxAudio = audioContext.createBufferSource();
+		relaxAudio.buffer = audioBuffer;
+		relaxAudio.loop = true;
+		relaxAudio.connect(audioContext.destination);
+		relaxAudio.start(0);
 		setIsPlaying(true);
 	};
 
 	const stopAudio = () => {
 		if (relaxAudio) {
-			relaxAudio.pause();
+			relaxAudio.stop();
 			relaxAudio = null;
 			setIsPlaying(false);
 		}
@@ -51,7 +56,7 @@ const RelaxIcon = () => {
 		backgroundImage.style.zIndex = "-1";
 		setTimeout(() => {
 			backgroundImage.style.filter = "blur(12px)";
-		}, 1000);
+		}, 500);
 		const body = document.querySelector("body");
 		body.insertBefore(backgroundImage, body.firstChild);
 	};
