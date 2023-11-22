@@ -12,11 +12,11 @@ const RelaxIcon = () => {
 		textarea.style.background = "";
 	};
 
-	const playAudio = async (item: string) => {
+	const playAudio = async (itemId: string) => {
 		if (relaxAudio) {
 			relaxAudio.stop();
 		}
-		const bgmUrl = chrome.runtime.getURL(`assets/${item.toLowerCase()}.mp3`);
+		const bgmUrl = chrome.runtime.getURL(`assets/${itemId}.mp3`);
 		const audioContext = new AudioContext();
 		const response = await fetch(bgmUrl);
 		const arrayBuffer = await response.arrayBuffer();
@@ -37,11 +37,11 @@ const RelaxIcon = () => {
 		}
 	};
 
-	const setupBackgroundImage = (item: string) => {
+	const setupBackgroundImage = (itemId: string) => {
 		if (backgroundImage === null) {
 			backgroundImage = document.createElement("div");
 		}
-		const url = chrome.runtime.getURL(`assets/${item.toLowerCase()}.jpg`);
+		const url = chrome.runtime.getURL(`assets/${itemId}.jpg`);
 		backgroundImage.style.backgroundImage = `url(${url})`;
 		backgroundImage.style.backgroundSize = "cover";
 		backgroundImage.style.backgroundRepeat = "no-repeat";
@@ -107,9 +107,9 @@ const RelaxIcon = () => {
 		);
 	};
 
-	const startRelax = (item: string) => {
-		playAudio(item);
-		setupBackgroundImage(item);
+	const startRelax = (itemId: string) => {
+		playAudio(itemId);
+		setupBackgroundImage(itemId);
 		setupTextAndCursorStyles();
 	};
 
@@ -140,7 +140,20 @@ const RelaxIcon = () => {
 		observer.observe(targetNode, config);
 	}, [restoreToOriginal]);
 
-	const relaxItems = [t.bonfire, t.rain, t.forest];
+	const relaxItems = [
+		{
+			id: "bonfire",
+			title: t.bonfire,
+		},
+		{
+			id: "rain",
+			title: t.rain,
+		},
+		{
+			id: "forest",
+			title: t.forest,
+		},
+	];
 
 	return (
 		<>
@@ -171,10 +184,10 @@ const RelaxIcon = () => {
 				aria-labelledby="page-edit-menu"
 			>
 				{relaxItems.map((item) => (
-					<li key={item}>
+					<li key={item.id}>
 						{/* biome-ignore lint/a11y/useValidAnchor: This a tag is required in scrapbox.io. */}
-						<a role="menuitem" onClick={() => startRelax(item)}>
-							{item}
+						<a role="menuitem" onClick={() => startRelax(item.id)}>
+							{item.title}
 						</a>
 					</li>
 				))}
