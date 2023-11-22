@@ -23,6 +23,8 @@ It provides a more focused environment for Scrapbox note-taking with relaxing ba
 
 ![Demo](https://github.com/okaryo/ScrapboxRelaxExtension/assets/44517313/41dcae1f-5cbd-4995-8fef-27313212ef5d)
 
+[Demo Movie](https://www.youtube.com/watch?v=XhwS2fl0PNA)
+
 ## BGM & BackgroundImage
 
 Currently supported background music and background images are following.
