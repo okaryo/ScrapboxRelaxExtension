@@ -21,7 +21,7 @@ It provides a more focused environment for Scrapbox note-taking with relaxing ba
 >[!WARNING] 
 >If you are using UserScript or UserCSS, it may not work correctly.
 
-![Demo](https://github.com/okaryo/ScrapboxRelaxExtension/assets/44517313/41dcae1f-5cbd-4995-8fef-27313212ef5d)
+![Demo](https://github.com/okaryo/ScrapboxRelaxExtension/assets/44517313/3d21eb14-a8e5-46aa-bccd-c678471dcba0)
 
 [Demo Movie](https://www.youtube.com/watch?v=XhwS2fl0PNA)
 
