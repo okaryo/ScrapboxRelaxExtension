@@ -1,6 +1,6 @@
 {
   "name": "ScrapboxRelaxExtension",
-  "description": "This chrome extension makes it easier to manage your open tabs.",
+  "description": "Relax Scrapbox Page Extension",
   "private": true,
   "scripts": {
     "dev": "vite build --watch --mode development",
