@@ -170,7 +170,6 @@ const RelaxIcon = () => {
 					height="24"
 					viewBox="0 -960 960 960"
 					width="24"
-					role="img"
 					aria-label="RelaxIcon"
 					className="kamon"
 					style={{ fontFamily: "AppIcons", fill: "currentcolor" }}
