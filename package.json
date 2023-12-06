@@ -17,8 +17,8 @@
     "@types/react-dom": "^18.2.15",
     "@vitejs/plugin-react": "^4.1.1",
     "typescript": "^5.2.2",
-    "vite": "^4.5.0",
-    "vitest": "^0.34.6"
+    "vite": "^5.0.6",
+    "vitest": "^1.0.1"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
