@@ -2,6 +2,7 @@
   "name": "ScrapboxRelaxExtension",
   "description": "Relax Scrapbox Page Extension",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "vite build --watch --mode development",
     "build": "vite build",
