@@ -8,10 +8,10 @@
   "action": {
     "default_title": "ScrapboxRelaxExtension",
     "default_icon": {
-      "16": "scrapbox_relax_extension16.png",
-      "32": "scrapbox_relax_extension32.png",
-      "48": "scrapbox_relax_extension48.png",
-      "128": "scrapbox_relax_extension128.png"
+      "16": "icon_16.png",
+      "32": "icon_32.png",
+      "48": "icon_48.png",
+      "128": "icon_128.png"
     }
   },
   "content_scripts": [
@@ -21,10 +21,10 @@
     }
   ],
   "icons": {
-    "16": "scrapbox_relax_extension16.png",
-    "32": "scrapbox_relax_extension32.png",
-    "48": "scrapbox_relax_extension48.png",
-    "128": "scrapbox_relax_extension128.png"
+    "16": "icon_16.png",
+    "32": "icon_32.png",
+    "48": "icon_48.png",
+    "128": "icon_128.png"
   },
   "web_accessible_resources": [
     {
