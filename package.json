@@ -12,14 +12,14 @@
   "author": "okaryo",
   "license": "MIT",
   "devDependencies": {
-    "@biomejs/biome": "1.4.1",
-    "@types/chrome": "^0.0.254",
-    "@types/react": "^18.2.42",
-    "@types/react-dom": "^18.2.17",
+    "@biomejs/biome": "1.5.1",
+    "@types/chrome": "^0.0.256",
+    "@types/react": "^18.2.47",
+    "@types/react-dom": "^18.2.18",
     "@vitejs/plugin-react": "^4.2.1",
     "typescript": "^5.3.3",
-    "vite": "^5.0.7",
-    "vitest": "^1.0.2"
+    "vite": "^5.0.11",
+    "vitest": "^1.2.0"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
